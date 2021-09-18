@@ -1,0 +1,29 @@
+@mixin displayFlex($content, $item, $gap) {
+  display: flex;
+  justify-content: $content;
+  align-items: $item;
+  gap: $gap;
+}
+
+@mixin displayGrid($content, $item, $column, $gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  justify-content: $content;
+  align-items: $item;
+  gap: $gap;
+}
+
+@mixin btn($padding, $background, $color, $border) {
+  background: $background;
+  border: $border;
+  border-radius: 50px;
+  padding: $padding;
+  color: $color;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

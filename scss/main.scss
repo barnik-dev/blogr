@@ -1,0 +1,128 @@
+@import "./colors", "./base", "./mixins";
+
+.header {
+  background: linear-gradient(to bottom right, $very-light-red, $light-red-100);
+  border-bottom-left-radius: 110px;
+  position: relative;
+  overflow: hidden;
+
+  .header-bg {
+    position: absolute;
+    width: 1000px;
+    top: -180px;
+    left: -230px;
+  }
+
+  // Navigation Section
+  .top-container {
+    @include displayFlex(space-between, center, 0);
+    padding-top: 3.5em;
+    position: relative;
+
+    .navbar {
+      position: absolute;
+      margin-top: 1em;
+      background-color: $white;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      color: $very-dark-blue;
+      font-weight: 700;
+      box-shadow: 6px 6px 20px 5px rgba(black, 0.2);
+
+      .list-item {
+        font-size: 1.3rem;
+        margin: 1.3em 0;
+      }
+
+      .list-item-content {
+        margin-top: 0.5em;
+        background-color: $light-gray;
+        padding: 1em 0;
+        font-size: 1.1rem;
+        border-radius: 8px;
+
+        a {
+          display: block;
+          color: $very-dark-grayish-blue;
+          margin: 1em 0;
+          font-weight: 700;
+        }
+      }
+
+      .cta-secondary {
+        color: $very-dark-blue;
+        font-size: 1.2rem;
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1em 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: $light-gray;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cta-primary {
+        @include btn(
+          0.8em 1.8em 0.7em,
+          linear-gradient(to right, $very-light-red, $light-red-100),
+          $white,
+          none
+        );
+
+        display: block;
+        width: fit-content;
+        margin: 0 auto 1em;
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  padding: 4em 2em 5em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  .head {
+    color: $white;
+  }
+
+  .sub-head {
+    color: $grayish-blue;
+    margin: 1em auto 2.5em;
+    max-width: 280px;
+    font-weight: 700;
+  }
+
+  .cta-primary {
+    @include btn(0.9em 1em, $white, $light-red, none);
+    font-size: 1rem;
+    margin-right: 1em;
+  }
+
+  .cta-secondary {
+    @include btn(0.9em 1.2em, transparent, $white, 1px solid $white);
+    font-size: 1rem;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
